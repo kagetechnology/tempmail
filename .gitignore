@@ -1,0 +1,19 @@
+# Wrangler auth & cache
+.wrangler/
+node_modules/
+
+# Config dengan nilai sensitif (database_id, dll)
+# Gunakan wrangler.toml.example sebagai template
+wrangler.toml
+
+# Env & secrets (jangan pernah commit ini)
+.env
+.env.local
+.dev.vars
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

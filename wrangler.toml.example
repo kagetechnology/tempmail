@@ -1,0 +1,27 @@
+name = "kagemail-bot"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+DOMAIN = "your-domain.com"   # Ganti dengan domain kamu
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kagemail-db"
+database_id = "YOUR_DATABASE_ID"   # Hasil dari: npm run db:create
+
+# Custom domain (pakai SSL dari domain kamu, bukan workers.dev)
+[[routes]]
+pattern = "bot.your-domain.com"    # Ganti dengan domain kamu
+custom_domain = true
+
+# Cron: cleanup expired emails every hour
+[triggers]
+crons = ["0 * * * *"]
+
+# ─────────────────────────────────────────────
+# Secrets (set via CLI, JANGAN tulis di sini!):
+# npm run set:token    → BOT_TOKEN
+# npm run set:secret   → WEBHOOK_SECRET
+# ─────────────────────────────────────────────

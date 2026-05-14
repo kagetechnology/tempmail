@@ -1,0 +1,21 @@
+{
+  "name": "kagemail-bot",
+  "version": "1.0.0",
+  "description": "Telegram Temp Mail Bot — kagemail.my.id",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create kagemail-db",
+    "db:migrate:local": "wrangler d1 execute kagemail-db --local --file=schema.sql",
+    "db:migrate:remote": "wrangler d1 execute kagemail-db --remote --file=schema.sql",
+    "set:token": "wrangler secret put BOT_TOKEN",
+    "set:secret": "wrangler secret put WEBHOOK_SECRET"
+  },
+  "dependencies": {
+    "postal-mime": "^2.2.6"
+  },
+  "devDependencies": {
+    "wrangler": "^3.70.0"
+  }
+}
